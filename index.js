@@ -10,7 +10,7 @@ const calculators = {
   elo: new Elo()
 };
 
-const players = ['Joel', 'Anders', 'Jonas', 'David', 'Linus', 'Johan', 'Pär', 'Zebbe', 'Daniel']
+const players = ['Joel', 'Anders', 'Jonas', 'David', 'Linus', 'Johan', 'Pär', 'Zebbe', 'Daniel', 'Simon']
   .reduce(function(players, player) {
     return Object.assign({}, players, {
       [player]: {
@@ -33,7 +33,11 @@ function updateRatings() {
       createMatch(players, 'Anders', 'Johan', 1, calculator),
       createMatch(players, 'Pär', 'Zebbe', 1, calculator),
       createMatch(players, 'Linus', 'Daniel', 1, calculator),
-      createMatch(players, 'Linus', 'Daniel', 1, calculator)
+      createMatch(players, 'Linus', 'Daniel', 1, calculator),
+      createMatch(players, 'David', 'Simon', 1, calculator),
+      createMatch(players, 'Daniel', 'David', 0, calculator),
+      createMatch(players, 'Linus', 'David', 1, calculator),
+      createMatch(players, 'Daniel', 'Simon', 1, calculator),
     ])
   });
 }
@@ -43,6 +47,6 @@ updateRatings();
 console.log(Object.keys(players).reduce(function(playerList, player) {
   return [
     ...playerList,
-    `${player}: Glicko:  ${Math.round(players[player].glicko.getRating())} Elo: ${Math.roundplayers[player].elo.rating}`
+    `${player}: Glicko:  ${Math.round(players[player].glicko.getRating())} Elo: ${Math.round(players[player].elo.rating)}. Games played: ${players[player].elo.numberOfGamesPlayed}`
   ];
 }, []));
