@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "elo-calculator": "^1.0.1",
     "glicko2": "^0.8.4"
   }
 }

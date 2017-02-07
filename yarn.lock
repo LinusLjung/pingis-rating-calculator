@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+elo-calculator@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/elo-calculator/-/elo-calculator-1.0.1.tgz#2d32eda70003d0124d35c62601b3153f87377439"
+
 glicko2@^0.8.4:
   version "0.8.4"
   resolved "https://registry.yarnpkg.com/glicko2/-/glicko2-0.8.4.tgz#cc126e4ebcd577e2a8ff1d6d819f5d08ee985aaf"
