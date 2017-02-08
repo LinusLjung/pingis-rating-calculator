@@ -38,6 +38,9 @@ function updateRatings() {
       createMatch(players, 'Daniel', 'David', 0, calculator),
       createMatch(players, 'Linus', 'David', 1, calculator),
       createMatch(players, 'Daniel', 'Simon', 1, calculator),
+      createMatch(players, 'David', 'Daniel', 0, calculator),
+      createMatch(players, 'Joel', 'Anders', 0, calculator),
+      createMatch(players, 'Joel', 'Johan', 1, calculator),
     ])
   });
 }
