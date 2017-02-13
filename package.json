@@ -2,14 +2,28 @@
   "name": "glicko",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --watch --progress --colors"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "elo-calculator": "^1.0.1",
+    "express": "^4.14.1",
+    "firebase": "^3.6.9",
+    "firebaseui": "^1.0.0",
     "glicko2": "^0.8.4"
+  },
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-transform-react-jsx": "^6.22.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.2",
+    "redux": "^3.6.0",
+    "redux-devtools": "^3.3.2",
+    "webpack": "^2.2.1"
   }
 }
