@@ -22,6 +22,7 @@ function getRatings(players, matches) {
   const playerObjects = players.reduce(function(players, player) {
     return Object.assign({}, players, {
       [player]: {
+        name: player,
         elo: calculators.elo.createPlayer(),
         glicko: calculators.glicko.makePlayer()
       }
@@ -46,13 +47,15 @@ function App({
 }) {
   return (
     <div>
-      { Object.keys(players).map(function(player) {
-        return (
+      { Object.keys(players)
+        .map(player => players[player])
+        .sort((a, b) => a.elo.rating < b.elo.rating ? 1 : -1)
+        .map(player => (
           <div>
-            { `${player}: Glicko:  ${Math.round(players[player].glicko.getRating())} Elo: ${Math.round(players[player].elo.rating)}. Games played: ${players[player].elo.numberOfGamesPlayed}` }
+            { `${player.name}: Glicko:  ${Math.round(player.glicko.getRating())} Elo: ${Math.round(player.elo.rating)}. Games played: ${player.elo.numberOfGamesPlayed}` }
           </div>
-        )
-      }) }
+        ))
+      }
     </div>
   );
 }
