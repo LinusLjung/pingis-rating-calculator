@@ -1,10 +1,11 @@
 {
-  "name": "glicko",
+  "name": "Pingis",
   "version": "1.0.0",
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack --watch --progress --colors"
+    "dev": "webpack --watch --progress --colors",
+    "build": "rm -rf build && mkdir build && cp -R public/* build && webpack --progress --colors"
   },
   "author": "",
   "license": "ISC",

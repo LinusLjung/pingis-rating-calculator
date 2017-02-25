@@ -1,8 +1,9 @@
 const express = require('express');
-var app = express();
+const app = express();
+const port = 8000;
 
-app.use(express.static('public'));
+app.use(express.static('build'));
 
-app.listen(8000);
+app.listen(port);
 
-console.log('Listening on port 8000');
+console.log('Listening on port ' + 8000);
